@@ -28,7 +28,8 @@ const [userType, setUserType] = useState("student");
               Dont have an account yet?{" "}
               <span
                 className="text-red-500 underline cursor-pointer"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   setAuthType("signup");
                 }}
               >
@@ -40,7 +41,8 @@ const [userType, setUserType] = useState("student");
               Already have an account?{" "}
               <span
                 className="text-red-500 underline cursor-pointer"
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   setAuthType("login");
                 }}
               >
@@ -58,7 +60,10 @@ const [userType, setUserType] = useState("student");
                   ? "bg-red-500 text-white"
                   : "bg-white text-red-500")
               }
-              onClick={() => setUserType("student")}
+              onClick={(e) => {
+                e.preventDefault();
+                setUserType("student");
+              }}
             >
               Student
             </button>
@@ -69,7 +74,10 @@ const [userType, setUserType] = useState("student");
                   ? "bg-red-500 text-white"
                   : "bg-white text-red-500")
               }
-              onClick={() => setUserType("mentor")}
+              onClick={(e) => {
+                e.preventDefault();
+                setUserType("mentor");
+              }}
             >
               Mentor
             </button>
@@ -101,6 +109,7 @@ const [userType, setUserType] = useState("student");
               <button
                 type="submit"
                 className="bg-red-500 w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
+                userType={userType}
               >
                 Login
               </button>
