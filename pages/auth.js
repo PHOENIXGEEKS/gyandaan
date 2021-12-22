@@ -1,12 +1,12 @@
-import {useState} from 'react';
+import { useState } from 'react';
 export default function auth() {
 
 
-const [authType, setAuthType] = useState("login");
-const [userType, setUserType] = useState("student");
+  const [authType, setAuthType] = useState("login");
+  const [userType, setUserType] = useState("student");
 
-// console.log(authType);
-// console.log(userType);
+  // console.log(authType);
+  // console.log(userType);
 
   return (
     <div id="login_page" className="w-full flex h-full">

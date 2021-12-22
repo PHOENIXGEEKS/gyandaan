@@ -2,17 +2,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import About from '../components/About';
+import Features from '../components/Features';
 
 // Components
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
-// Styles
-import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Gyandaan</title>
         <meta name="description" content="Gyandaan App" />
@@ -21,6 +20,7 @@ export default function Home() {
       <Navbar />
       <div className="margin-0">
         <About />
+        <Features />
         <Footer />
       </div>
     </div>
