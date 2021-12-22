@@ -1,13 +1,12 @@
+import {useState} from 'react';
 export default function auth() {
 
-  // const [authType, setAuthType] = useState("login");
 
-  var authType = "login";
-  var userType = "student";
+const [authType, setAuthType] = useState("login");
+const [userType, setUserType] = useState("student");
 
-  const setAuthType = () => {
-
-  }
+// console.log(authType);
+// console.log(userType);
 
   return (
     <div id="login_page" className="w-full flex h-full">
@@ -20,7 +19,7 @@ export default function auth() {
           {authType == "login" ? (
             <h1 className="text-4xl font-bold">Login</h1>
           ) : (
-            <h1>Signup</h1>
+            <h1 className="text-4xl font-bold">Signup</h1>
           )}
         </div>
         <div className="mt-4">
@@ -28,40 +27,54 @@ export default function auth() {
             <h1 className="">
               Dont have an account yet?{" "}
               <span
-                className="text-red-500 underline"
+                className="text-red-500 underline cursor-pointer"
                 onClick={() => {
-                  return setAuthType("signup");
+                  setAuthType("signup");
                 }}
               >
                 Signup
               </span>
             </h1>
           ) : (
-            <h1>
-              <h1 className="">
-                Already have an account?{" "}
-                <span
-                  className="text-red-500 underline"
-                  onClick={() => {
-                    return setAuthType("signup");
-                  }}
-                >
-                  Login
-                </span>
-              </h1>
+            <h1 className="">
+              Already have an account?{" "}
+              <span
+                className="text-red-500 underline cursor-pointer"
+                onClick={() => {
+                  setAuthType("login");
+                }}
+              >
+                Login
+              </span>
             </h1>
           )}
         </div>
-        <div className="flex space-x-10 my-12">
-          <button className="bg-red-500 rounded-full px-8 py-2 text-white border-2 border-red-500">
-            Student
-          </button>
-          <button className="bg-white rounded-full px-8 py-2 text-red-500 border-2 border-red-500">
-            Student
-          </button>
-        </div>
-        <div>
-          <form>
+        <form>
+          <div className="flex space-x-10 my-12">
+            <button
+              className={
+                "rounded-full px-8 py-2 border-2 border-red-500 " +
+                (userType == "student"
+                  ? "bg-red-500 text-white"
+                  : "bg-white text-red-500")
+              }
+              onClick={() => setUserType("student")}
+            >
+              Student
+            </button>
+            <button
+              className={
+                "rounded-full px-8 py-2 border-2 border-red-500 " +
+                (userType == "mentor"
+                  ? "bg-red-500 text-white"
+                  : "bg-white text-red-500")
+              }
+              onClick={() => setUserType("mentor")}
+            >
+              Mentor
+            </button>
+          </div>
+          <div>
             <div className="flex flex-col space-y-4">
               <label htmlFor="email_id" value="">
                 Email:
@@ -92,9 +105,11 @@ export default function auth() {
                 Login
               </button>
             </div>
-          </form>
-          <a href="#" className="underline">Forget password</a>
-        </div>
+            <a href="#" className="underline">
+              Forget password
+            </a>
+          </div>
+        </form>
       </div>
     </div>
   );
