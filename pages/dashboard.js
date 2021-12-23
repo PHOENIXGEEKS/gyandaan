@@ -5,28 +5,42 @@ import Profile from '../components/Dashboard/Profile';
 import Settings from '../components/Dashboard/Settings';
 
 export default function dashboard(props) {
+
+
   const [option, setOption] = useState(<Dashboard />);
+  const [optionHeading, setOptionHeading] = useState("Dashboard");
+
 
   const optionHandler = (opt) => {
     if (opt == "dashboard") {
-      setOption(<Dashboard />)
+      setOption(<Dashboard />);
+      setOptionHeading("Dashboard");
       // option = <Dashboard />
     }
 
     else if (opt == "preferences") {
-      setOption(<Preferences />)
+      setOption(<Preferences />);
+      setOptionHeading("Preferences");
     }
 
     else if (opt == "profile") {
-      setOption(<Profile />)
+      setOption(<Profile />);
+      setOptionHeading("Profile");
     }
     else if (opt == "settings") {
-      setOption(<Settings />)
+      setOption(<Settings />);3
+      setOptionHeading("Settings");
     }
     else {
       option = <Dashboard />
+      setOptionHeading("Dashboard");
     }
   }
+
+
+  console.log(optionHeading);
+
+
   return (
     <div className="w-full min-h-screen flex">
       <div className="w-1/4 bg-gray-50">
@@ -37,7 +51,15 @@ export default function dashboard(props) {
         </div>
         {/* dashboard side menu */}
         <div id="dashboard_menu" className="flex flex-col ml-24 space-y-10">
-          <button onClick={() => { optionHandler('dashboard') }} className="flex items-center bg-white p-4 rounded-l-xl">
+          <button
+            onClick={() => {
+              optionHandler("dashboard");
+            }}
+            className={
+              "flex items-center p-4 " +
+              (optionHeading == "Dashboard" ? "rounded-l-xl bg-white" : null)
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="text-gray-700 h-6 w-6"
@@ -54,7 +76,15 @@ export default function dashboard(props) {
             </svg>
             <p className="text-gray-600 ml-4 text-md">Dashboard</p>
           </button>
-          <button onClick={() => { optionHandler('profile') }} className="flex items-center p-4">
+          <button
+            onClick={() => {
+              optionHandler("profile");
+            }}
+            className={
+              "flex items-center p-4 " +
+              (optionHeading == "Profile" ? "rounded-l-xl bg-white" : null)
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="text-gray-700 h-6 w-6"
@@ -71,7 +101,15 @@ export default function dashboard(props) {
             </svg>
             <p className="text-gray-600 ml-4 text-md">Profile</p>
           </button>
-          <button onClick={(() => { optionHandler('preferences') })} className="flex items-center p-4">
+          <button
+            onClick={() => {
+              optionHandler("preferences");
+            }}
+            className={
+              "flex items-center p-4 " +
+              (optionHeading == "Preferences" ? "rounded-l-xl bg-white" : null)
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="text-gray-700 h-6 w-6"
@@ -88,7 +126,15 @@ export default function dashboard(props) {
             </svg>
             <p className="text-gray-600 ml-4 text-md">Preferences</p>
           </button>
-          <button onClick={(() => { optionHandler('settings') })} className="flex items-center p-4">
+          <button
+            onClick={() => {
+              optionHandler("settings");
+            }}
+            className={
+              "flex items-center p-4 " +
+              (optionHeading == "Settings" ? "rounded-l-xl bg-white" : null)
+            }
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="text-gray-700 h-6 w-6"
@@ -138,6 +184,7 @@ export default function dashboard(props) {
         </div>
         <hr className="mt-20" />
         <div id="dashboard_Sbody">
+          <h1 className="my-6 text-2xl font-semibold">{optionHeading}</h1>
           {option}
         </div>
       </div>

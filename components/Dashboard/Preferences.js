@@ -1,9 +1,13 @@
 function Preferences() {
     return (
-        <div className="flex">
-            <p className="text-gray-600 ml-4 text-md">Preferences</p>
+      <div className="">
+        <div className="flex flex-wrap space-x-10">
+          <div className="h-48 w-80 bg-emerald-100 rounded-xl"> </div>
+          <div className="h-48 w-80 bg-indigo-50 rounded-xl"> </div>
+          <div className="h-48 w-80 bg-red-50 rounded-xl"> </div>
         </div>
-    )
+      </div>
+    );
 }
 
 export default Preferences
