@@ -11,7 +11,7 @@ export default function auth() {
   return (
     <div id="login_page" className="w-full flex h-full">
       {/* Left part */}
-      <div className="w-1/3 h-screen bg-red-500"></div>
+      <div className="w-1/3 bg-primary-red"></div>
       {/* Right part */}
       <div className="w-2/3 h-full p-20">
         {/* heading----option to signup----form----button */}
@@ -27,7 +27,7 @@ export default function auth() {
             <h1 className="">
               Dont have an account yet?{" "}
               <span
-                className="text-red-500 underline cursor-pointer"
+                className="text-primary-red underline cursor-pointer"
                 onClick={(e) => {
                   e.preventDefault();
                   setAuthType("signup");
@@ -40,7 +40,7 @@ export default function auth() {
             <h1 className="">
               Already have an account?{" "}
               <span
-                className="text-red-500 underline cursor-pointer"
+                className="text-primary-red underline cursor-pointer"
                 onClick={(e) => {
                   e.preventDefault();
                   setAuthType("login");
@@ -55,10 +55,10 @@ export default function auth() {
           <div className="flex space-x-10 my-12">
             <button
               className={
-                "rounded-full px-8 py-2 border-2 border-red-500 " +
+                "rounded-full px-8 py-2 border-2 border-primary-red " +
                 (userType == "student"
-                  ? "bg-red-500 text-white"
-                  : "bg-white text-red-500")
+                  ? "bg-primary-red text-white shadow-xl"
+                  : "bg-white text-primary-red")
               }
               onClick={(e) => {
                 e.preventDefault();
@@ -69,10 +69,10 @@ export default function auth() {
             </button>
             <button
               className={
-                "rounded-full px-8 py-2 border-2 border-red-500 " +
+                "rounded-full px-8 py-2 border-2 border-primary-red " +
                 (userType == "mentor"
-                  ? "bg-red-500 text-white"
-                  : "bg-white text-red-500")
+                  ? "bg-primary-red text-white shadow-xl"
+                  : "bg-white text-primary-red")
               }
               onClick={(e) => {
                 e.preventDefault();
@@ -91,7 +91,7 @@ export default function auth() {
                 type="email"
                 required
                 name="email_id"
-                className="shadow-lg rounded-full px-4 py-2 w-80 border border-gray-100"
+                className="shadow-lg rounded-full px-4 py-2 w-80 border border-grey"
                 placeholder="elonmusk@tesla.com"
               />
               <label htmlFor="password" value="">
@@ -101,14 +101,14 @@ export default function auth() {
                 type="password"
                 required
                 name="password"
-                className="shadow-lg rounded-full px-4 py-2 w-80 border border-gray-100"
+                className="shadow-lg rounded-full px-4 py-2 w-80 border border-grey"
                 placeholder="i_love_DogeCoin_3000"
               />
             </div>
             <div>
               <button
                 type="submit"
-                className="bg-red-500 w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
+                className="bg-primary-red w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
                 userType={userType}
               >
                 Login

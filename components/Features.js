@@ -1,6 +1,6 @@
 function Features() {
     return (
-        <div className="flex justify-between w-full h-80 bg-red-500">
+        <div className="flex justify-between w-full h-80 bg-primary-red">
 
         </div>
     )
