@@ -9,7 +9,7 @@ export default function auth() {
   // console.log(userType);
 
   return (
-    <div id="login_page" className="w-full flex h-full">
+    <div id="login_page" className="w-full flex min-h-screen">
       {/* Left part */}
       <div className="w-1/3 bg-primary-red"></div>
       {/* Right part */}
