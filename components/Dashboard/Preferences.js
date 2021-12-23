@@ -2,9 +2,13 @@ function Preferences() {
     return (
       <div className="">
         <div className="flex flex-wrap space-x-10">
-          <div className="h-48 w-80 bg-emerald-100 rounded-xl"> </div>
-          <div className="h-48 w-80 bg-indigo-50 rounded-xl"> </div>
-          <div className="h-48 w-80 bg-red-50 rounded-xl"> </div>
+          <button className="h-24 w-24 shadow-xl shadow-emerald-200 bg-emerald-400 rounded-full text-white text-5xl font-bold"> S </button>
+          <button className="h-24 w-24 shadow-2xl rounded-full text-emerald-400 text-5xl font-bold"> M </button>
+          <button className="h-24 w-24 shadow-xl shadow-emerald-200 bg-emerald-400 rounded-full text-white text-5xl font-bold"> T </button>
+          <button className="h-24 w-24 shadow-xl shadow-emerald-200 bg-emerald-400 rounded-full text-white text-5xl font-bold"> W </button>
+          <button className="h-24 w-24 shadow-xl shadow-emerald-200 bg-emerald-400 rounded-full text-white text-5xl font-bold"> T </button>
+          <button className="h-24 w-24 shadow-xl shadow-emerald-200 bg-emerald-400 rounded-full text-white text-5xl font-bold"> F </button>
+          <button className="h-24 w-24 shadow-xl shadow-emerald-200 bg-emerald-400 rounded-full text-white text-5xl font-bold"> S </button>
         </div>
       </div>
     );
