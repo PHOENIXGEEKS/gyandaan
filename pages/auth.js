@@ -1,12 +1,7 @@
 import { useState } from 'react';
 export default function auth() {
-
-
   const [authType, setAuthType] = useState("login");
   const [userType, setUserType] = useState("student");
-
-  // console.log(authType);
-  // console.log(userType);
 
   return (
     <div id="login_page" className="w-full flex min-h-screen">
@@ -22,6 +17,7 @@ export default function auth() {
             <h1 className="text-4xl font-bold">Signup</h1>
           )}
         </div>
+
         <div className="mt-4">
           {authType == "login" ? (
             <h1 className="">
@@ -51,6 +47,7 @@ export default function auth() {
             </h1>
           )}
         </div>
+
         <form>
           <div className="flex space-x-10 my-12">
             <button
@@ -67,6 +64,7 @@ export default function auth() {
             >
               Student
             </button>
+
             <button
               className={
                 "rounded-full px-8 py-2 border-2 border-primary-red " +
@@ -82,8 +80,24 @@ export default function auth() {
               Mentor
             </button>
           </div>
+
           <div>
             <div className="flex flex-col space-y-4">
+              {authType == "login" ? ("") : (
+                <div className="flex flex-col space-y-4">
+                  <label htmlFor="name" value="">
+                    Name:
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    name="name"
+                    className="shadow-lg rounded-full px-4 py-2 w-80 border border-grey"
+                    placeholder="Enter your name"
+                  />
+                </div>
+              )
+              }
               <label htmlFor="email_id" value="">
                 Email:
               </label>
@@ -92,7 +106,7 @@ export default function auth() {
                 required
                 name="email_id"
                 className="shadow-lg rounded-full px-4 py-2 w-80 border border-grey"
-                placeholder="elonmusk@tesla.com"
+                placeholder="Enter your email"
               />
               <label htmlFor="password" value="">
                 Password:
@@ -102,16 +116,19 @@ export default function auth() {
                 required
                 name="password"
                 className="shadow-lg rounded-full px-4 py-2 w-80 border border-grey"
-                placeholder="i_love_DogeCoin_3000"
+                placeholder="Enter your password"
               />
             </div>
+
             <div>
               <button
                 type="submit"
                 className="bg-primary-red w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
                 userType={userType}
               >
-                Login
+                {
+                  authType == "login" ? (<p>Login</p>) : (<p>Signup</p>)
+                }
               </button>
             </div>
             <a href="#" className="underline">
