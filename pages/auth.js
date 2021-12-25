@@ -1,7 +1,29 @@
 import { useState } from 'react';
+import SmallLoader from '../utilities/SmallLoader';
+
 export default function auth() {
   const [authType, setAuthType] = useState("login");
   const [userType, setUserType] = useState("student");
+  const [isSubmitting, setSubmitting] = useState(false);
+
+  const authHandler = async event => {
+    event.preventDefault()
+    setSubmitting(true)
+    const res = await fetch(
+      'http://localhost:5000/auth',
+      {
+        body: JSON.stringify({
+          name: event.target.name.value
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+
+      }
+    )
+    console.log(res)
+  }
 
   return (
     <div id="login_page" className="w-full flex min-h-screen">
@@ -48,7 +70,7 @@ export default function auth() {
           )}
         </div>
 
-        <form>
+        <form onSubmit={authHandler}>
           <div className="flex space-x-10 my-12">
             <button
               className={
@@ -123,11 +145,14 @@ export default function auth() {
             <div>
               <button
                 type="submit"
-                className="bg-primary-red w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
+                className="flex flex-row bg-primary-red w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
                 userType={userType}
               >
                 {
                   authType == "login" ? (<p>Login</p>) : (<p>Signup</p>)
+                }
+                {
+                  isSubmitting ? <SmallLoader /> : ""
                 }
               </button>
             </div>
