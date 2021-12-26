@@ -105,7 +105,9 @@ export default function auth() {
 
           <div>
             <div className="flex flex-col space-y-4">
-              {authType == "login" ? ("") : (
+              {authType == "login" ? (
+                ""
+              ) : (
                 <div className="flex flex-col space-y-4">
                   <label htmlFor="name" value="">
                     Name:
@@ -115,11 +117,10 @@ export default function auth() {
                     required
                     name="name"
                     className="shadow-lg rounded-full px-4 py-2 w-80 border border-grey"
-                    placeholder="Enter your name"
+                    placeholder="Enter your Name"
                   />
                 </div>
-              )
-              }
+              )}
               <label htmlFor="email_id" value="">
                 Email:
               </label>
@@ -128,7 +129,7 @@ export default function auth() {
                 required
                 name="email_id"
                 className="shadow-lg rounded-full px-4 py-2 w-80 border border-grey"
-                placeholder="Enter your email"
+                placeholder="Enter your Email"
               />
               <label htmlFor="password" value="">
                 Password:
@@ -138,8 +139,25 @@ export default function auth() {
                 required
                 name="password"
                 className="shadow-lg rounded-full px-4 py-2 w-80 border border-grey"
-                placeholder="Enter your password"
+                placeholder="Enter your Password"
               />
+
+              {authType == "login" ? (
+                ""
+              ) : (
+                <div className="flex flex-col space-y-4">
+                  <label htmlFor="conPassword" value="">
+                    Confirm Password:
+                  </label>
+                  <input
+                    type="password"
+                    required
+                    name="conPassword"
+                    className="shadow-lg rounded-full px-4 py-2 w-80 border border-grey"
+                    placeholder="Confirm Password"
+                  />
+                </div>
+              )}
             </div>
 
             <div>
@@ -148,17 +166,15 @@ export default function auth() {
                 className="flex flex-row bg-primary-red w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
                 userType={userType}
               >
-                {
-                  authType == "login" ? (<p>Login</p>) : (<p>Signup</p>)
-                }
-                {
-                  isSubmitting ? <SmallLoader /> : ""
-                }
+                {authType == "login" ? <p>Login</p> : <p>Signup</p>}
+                {isSubmitting ? <SmallLoader /> : ""}
               </button>
             </div>
-            <a href="#" className="underline">
+
+            {authType == "login" ? <a href="#" className="underline">
               Forget password
-            </a>
+            </a>:null }
+            
           </div>
         </form>
       </div>
