@@ -1,15 +1,15 @@
-import { useState } from 'react';
-
+import React, { useState } from 'react';
 import DashboardComponent from '../components/Dashboard/Dashboard'
 import Preferences from '../components/Dashboard/Preferences'
 import Profile from '../components/Dashboard/Profile';
 import Settings from '../components/Dashboard/Settings';
 
-export default function Dashboard(props) {
-    const [option, setOption] = useState(<Dashboard />);
+export default function Dashboard() {
+    const [option, setOption] = useState(<DashboardComponent />);
     const [optionHeading, setOptionHeading] = useState("Dashboard");
 
     const optionHandler = (opt) => {
+
         if (opt === "dashboard") {
             setOption(<DashboardComponent />);
             setOptionHeading("Dashboard");
@@ -33,6 +33,8 @@ export default function Dashboard(props) {
             setOptionHeading("Dashboard");
         }
     }
+
+    // console.log([option, optionHeading]);
 
     return (
         <div className="w-full min-h-screen flex">
