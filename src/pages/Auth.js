@@ -34,7 +34,7 @@ export default function Auth() {
             <div className="w-2/3 h-full p-20">
                 {/* heading----option to signup----form----button */}
                 <div>
-                    {authType == "login" ? (
+                    {authType === "login" ? (
                         <h1 className="text-4xl font-bold">Login</h1>
                     ) : (
                         <h1 className="text-4xl font-bold">Signup</h1>
@@ -42,7 +42,7 @@ export default function Auth() {
                 </div>
 
                 <div className="mt-4">
-                    {authType == "login" ? (
+                    {authType === "login" ? (
                         <h1 className="">
                             Dont have an account yet?{" "}
                             <span
@@ -76,7 +76,7 @@ export default function Auth() {
                         <button
                             className={
                                 "rounded-full px-8 py-2 border-2 border-primary-red " +
-                                (userType == "student"
+                                (userType === "student"
                                     ? "bg-primary-red text-white shadow-xl"
                                     : "bg-white text-primary-red")
                             }
@@ -91,7 +91,7 @@ export default function Auth() {
                         <button
                             className={
                                 "rounded-full px-8 py-2 border-2 border-primary-red " +
-                                (userType == "mentor"
+                                (userType === "mentor"
                                     ? "bg-primary-red text-white shadow-xl"
                                     : "bg-white text-primary-red")
                             }
@@ -106,7 +106,7 @@ export default function Auth() {
 
                     <div>
                         <div className="flex flex-col space-y-4">
-                            {authType == "login" ? (
+                            {authType === "login" ? (
                                 ""
                             ) : (
                                 <div className="flex flex-col space-y-4">
@@ -143,7 +143,7 @@ export default function Auth() {
                                 placeholder="Enter your Password"
                             />
 
-                            {authType == "login" ? (
+                            {authType === "login" ? (
                                 ""
                             ) : (
                                 <div className="flex flex-col space-y-4">
@@ -167,12 +167,12 @@ export default function Auth() {
                                 className="flex flex-row bg-primary-red w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
                                 userType={userType}
                             >
-                                {authType == "login" ? <p>Login</p> : <p>Signup</p>}
+                                {authType === "login" ? <p>Login</p> : <p>Signup</p>}
                                 {isSubmitting ? <SmallLoader /> : ""}
                             </button>
                         </div>
 
-                        {authType == "login" ? <a href="#" className="underline">
+                        {authType === "login" ? <a href="/" className="underline">
                             Forget password
                         </a> : null}
 
