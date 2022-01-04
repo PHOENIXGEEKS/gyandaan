@@ -18,12 +18,12 @@ function Features() {
         'Tutors'
     ]
     return (
-        <div className="flex items-center justify-between w-full h-80 p-5 bg-primary-red">
+        <div className="flex flex-col items-center justify-between w-full h-auto p-5 bg-primary-red space-y-20 md:flex-row h-80">
             {
                 [
                     icons.map((icon, key) => {
                         return (
-                            <div className="flex flex-col space-y-2 items-center">
+                            <div className="flex flex-col space-y-5 items-center">
 
                                 <img className='invert h-32' src={icon} alt='icon' />
                                 {
