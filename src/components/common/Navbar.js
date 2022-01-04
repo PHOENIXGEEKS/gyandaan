@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 function Navbar() {
   return (
     <div id="navbar">
       <div className="shadow-xl h-20 w-full flex justify-between items-center px-10">
         <div id="logo" className="text-xl font-bold">
-          gyaan<span className="text-primary-red underline">daan.</span>
+          <Logo width={50} />
+          Gyaan<span className="text-primary-red underline">Daan</span>
         </div>
         <div id="auth" className="space-x-12">
           <Link id="login_btn" to="/auth">
