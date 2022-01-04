@@ -7,7 +7,7 @@ function Footer() {
             <div className="shadow-xl w-auto height-auto p-20 flex flex-col items-center space-y-8">
                 <div
                     id="footer_links"
-                    className="font-semibold space-x-16 underline"
+                    className="font-semibold space-x-2 underline md:space-x-16"
                 >
                     <a href="#" className="">
                         Need a Mentor?
@@ -23,7 +23,7 @@ function Footer() {
                     </a>
                 </div>
                 <div>contact@mentordaan.io</div>
-                <div id="footer_socials" className="flex space-x-8">
+                <div id="footer_socials" className="flex space-x-2 md:space-x-8">
                     <a
                         href="#"
                         className="h-14 w-14 rounded-full bg-red-500 flex justify-center items-center text-white"
@@ -55,7 +55,7 @@ function Footer() {
                         E
                     </a>
                 </div>
-                <div>&copy; Copyright 2021, mentordaan. All rights reserved.</div>
+                <div className='text-sm md:text-base'>&copy; Copyright 2021, mentordaan. All rights reserved.</div>
             </div>
         </div>
     )
