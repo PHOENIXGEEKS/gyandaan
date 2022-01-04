@@ -7,7 +7,7 @@ import Auth from './pages/Auth';
 
 function App() {
   return (
-    <div className='container'>
+    <div className='box-border w-full'>
       <BrowserRouter>
         <Routes>
           <Route path="/">
