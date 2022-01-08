@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './App.css';
 import Home from './pages/Home';
@@ -20,8 +20,7 @@ function App() {
             }
             <Route index element={<Home />} />
             <Route path="auth" element={<Auth />} />
-            <Route path="/404" element={<NotFound />} />
-            <Redirect to="/404" />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

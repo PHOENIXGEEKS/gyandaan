@@ -1,15 +1,58 @@
 import axios from 'axios';
 
-const authService = ({ username, password }) => {
-    const auth = { username: username, password: password }
-    const url = 'https://61d31f73b4c10c001712b7d8.mockapi.io/auth/'
-    axios
-        .post(url, auth)
+const register = (username, email, password) => {
+    const auth = { username: username, email: email, password: password }
+    const url = ''
+
+    var config = {
+        method: 'post',
+        url: url,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: auth
+    };
+
+    axios(config)
         .then((res) => {
-            if (res)
-                alert("Login Succes");
+            return res.data
         })
-        .catch((err) => alert("Login Failed", err));
+        .catch((e) => {
+            console.log(e)
+        })
 }
 
-export default authService;
+const login = (username, password) => {
+    const auth = { username: username, password: password }
+    const url = ''
+
+    var config = {
+        method: 'post',
+        url: url,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: auth
+    };
+
+    axios(config)
+        .then((res) => {
+            return res.data
+        })
+        .catch((e) => {
+            console.log(e)
+        })
+}
+
+
+const logout = () => {
+    console.log('logout')
+}
+
+const AuthService = {
+    register: register,
+    login: login,
+    logout: logout
+}
+
+module.exports = AuthService;
