@@ -70,7 +70,8 @@ export default function Auth() {
                     )}
                 </div>
 
-                <form onSubmit={authHandler}>
+                {/* Form */}
+                <form>
                     <div className="flex space-x-10 my-12">
                         <button
                             className={
@@ -165,6 +166,7 @@ export default function Auth() {
                                 type="submit"
                                 className="flex flex-row bg-primary-red w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
                                 userType={userType}
+                                onClick={authHandler}
                             >
                                 {authType === "login" ? <p>Login</p> : <p>Signup</p>}
                                 {isSubmitting ? <SmallLoader /> : ""}

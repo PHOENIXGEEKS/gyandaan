@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Logo from '../components/common/Logo';
 import DashboardComponent from '../components/Dashboard/Dashboard'
 import Preferences from '../components/Dashboard/Preferences'
 import Profile from '../components/Dashboard/Profile';
@@ -38,14 +39,15 @@ export default function Dashboard() {
 
     return (
         <div className="w-full min-h-screen flex">
-            <div className="w-1/4 bg-gray-50">
+            <div className="w-1/4 bg-slate-100 ">
                 {/* dashboard header */}
-                <div id="dashboard_header" className="font-bold text-3xl ml-28 mb-24">
-                    <h1 className="my-6">gyandaan.</h1>
-                    <hr className="-ml-14 mr-14" />
+                <div id="dashboard_header" className="flex items-center justify-center font-bold text-3xl mb-24">
+                    <Logo width={70} />
+                    <h1 className="">Gyandaan</h1>
                 </div>
                 {/* dashboard side menu */}
-                <div id="dashboard_menu" className="flex flex-col ml-24 space-y-10">
+                <div id="dashboard_menu" className="flex flex-col ml-4 space-y-10">
+                    <hr className="-ml-14 mr-14" />
                     <button
                         onClick={() => {
                             optionHandler("dashboard");
