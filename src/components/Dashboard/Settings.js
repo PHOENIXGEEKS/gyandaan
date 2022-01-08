@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Settings() {
+export default function Settings() {
     return (
       <div className="">
         <div className="flex flex-wrap space-x-10">
@@ -49,5 +49,3 @@ function Settings() {
       </div>
     );
 }
-
-export default Settings

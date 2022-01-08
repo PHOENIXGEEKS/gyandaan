@@ -39,7 +39,7 @@ export default function Dashboard() {
 
     return (
         <div className="w-full min-h-screen flex">
-            <div className="w-1/4 bg-slate-100 ">
+            <div className="w-1/5 bg-gray-50">
                 {/* dashboard header */}
                 <div id="dashboard_header" className="flex items-center justify-center font-bold text-3xl mb-24">
                     <Logo width={70} />
@@ -159,7 +159,7 @@ export default function Dashboard() {
 
             {/* dashboard screen */}
 
-            <div className="relative w-3/4 bg-white px-14">
+            <div className="relative w-4/5 bg-white px-14">
                 <div
                     id="notification_icon"
                     className=" bg-gray-50 rounded-full p-3 absolute right-14 top-4"
