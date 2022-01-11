@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Auth from './pages/Auth';
 import NotFound from "./pages/NotFound";
+import Settings from "./pages/Settings";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             }
             <Route index element={<Home />} />
             <Route path="auth" element={<Auth />} />
+            <Route path="settings" element={<Settings />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
