@@ -1,10 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './App.css';
+
 import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import Auth from './pages/Auth';
 import NotFound from "./pages/NotFound";
+
 
 function App() {
   const isAuthenticated = true;

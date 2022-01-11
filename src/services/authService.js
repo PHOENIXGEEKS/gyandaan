@@ -2,11 +2,10 @@ import axios from 'axios';
 
 const register = (username, email, password) => {
     const auth = { username: username, email: email, password: password }
-    const url = ''
 
     var config = {
         method: 'post',
-        url: url,
+        url: `${process.env.REACT_APP_URL}/auth`,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -24,11 +23,10 @@ const register = (username, email, password) => {
 
 const login = (username, password) => {
     const auth = { username: username, password: password }
-    const url = ''
 
     var config = {
         method: 'post',
-        url: url,
+        url: `${process.env.REACT_APP_URL}/auth`,
         headers: {
             'Content-Type': 'application/json'
         },
@@ -55,4 +53,4 @@ const AuthService = {
     logout: logout
 }
 
-module.exports = AuthService;
+export { AuthService };

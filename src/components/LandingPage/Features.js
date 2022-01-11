@@ -23,7 +23,7 @@ function Features() {
                 [
                     icons.map((icon, key) => {
                         return (
-                            <div className="flex flex-col space-y-5 items-center">
+                            <div className="flex flex-col space-y-5 items-center" key={key}>
 
                                 <img className='invert h-32' src={icon} alt='icon' />
                                 {

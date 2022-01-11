@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
+
+import { login } from "../redux/actions/auth";
+
 import SmallLoader from '../utilities/SmallLoader';
 
 export default function Auth() {
@@ -6,23 +11,16 @@ export default function Auth() {
     const [userType, setUserType] = useState("student");
     const [isSubmitting, setSubmitting] = useState(false);
 
+    const { isLoggedIn } = useSelector(state => state.auth);
+    const { message } = useSelector(state => state.message);
+
+    const dispatch = useDispatch();
+
+
     const authHandler = async event => {
         event.preventDefault()
         setSubmitting(true)
-        const res = await fetch(
-            'http://localhost:5000/auth',
-            {
-                body: JSON.stringify({
-                    name: event.target.name.value
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                method: 'POST'
 
-            }
-        )
-        console.log(res)
     }
 
     return (
@@ -165,7 +163,6 @@ export default function Auth() {
                             <button
                                 type="submit"
                                 className="flex flex-row bg-primary-red w-32 rounded-full px-8 py-2 text-white border-2 border-red-500 block mt-12 mb-4"
-                                userType={userType}
                                 onClick={authHandler}
                             >
                                 {authType === "login" ? <p>Login</p> : <p>Signup</p>}
