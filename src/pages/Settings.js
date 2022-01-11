@@ -23,7 +23,7 @@ function Settings() {
 
     return (
         <div className="w-full min-h-screen flex">
-            <div className="w-1/5 bg-gray-50">
+            <div className="w-1/5 bg-gray-100">
                 {/* dashboard header */}
                 <div id="dashboard_header" className="flex items-center justify-center font-bold text-3xl mb-24">
                     <Logo width={70} />

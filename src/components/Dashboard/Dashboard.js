@@ -21,9 +21,10 @@ export default function Dashboard() {
   });
 
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between p-7">
       <div className="flex flex-col">
         <div className="flex flex-wrap">
+
           {/* Left card */}
 
           <div className="h-48 w-80 bg-white drop-shadow-md rounded-xl mr-8 flex flex-col py-4 pl-8">
